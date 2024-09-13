@@ -1,0 +1,12 @@
+- ściągam z https://www.sqlite.org/download.html - A bundle of command-line tools for managing SQLite database files, including the command-line shell program, the sqldiff.exe program, and the sqlite3_analyzer.exe program. 64-bit.
+- kopiuje pliki do docelowego katalogu
+- w Windowsie wchodzę do: komputer -> właściwości -> Advanced system settings -> Zmienne środowiskowe -> Nowa Path dla zmiennych systemowych z lokacją dla sqllite3
+- po restarcie pycharma (ewentualnie można dodać zmienną również w jego ustawieniach) w terminalu można korzystać z sqlite3, tworzymy folder dla bazy, zakładamy bazę:
+        mkdir data
+        cd data
+        sqlite3 cantor.db
+        create table transactions (id integer primary key autoincrement, currency varchar(5), amount int, user varchar(30), trans_date date not null default(date()));
+        select * from transactions;
+        .tables
+        insert into transactions (currency, amount, user) values ('USD', 300, 'admin');
+        .quit

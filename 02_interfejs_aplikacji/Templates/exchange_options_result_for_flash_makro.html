@@ -1,0 +1,26 @@
+{% from "macros.html" import show_flash_message, show_all_flash_message %}
+<!DOCTYPE html>
+<html>
+    <html>
+        <head>
+            <title>Cantor</title>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        </head>
+        <body>
+            {% for message in get_flashed_messages() %}
+                {{ show_flash_message(message) }}
+            {% endfor %}
+
+            {{ show_all_flash_message() }}
+
+            <h1>You selected {{currency}} and amount {{amount}}</h1><br>
+            <h1>You selected {{currency_info.code}} and {{currency_info.flag}}</h1><br>
+            {% if currency_info.code != 'unknown' %}
+                <img src="{{url_for('static', filename=currency_info.flag)}}">
+            {% else %}
+                <img src="{{url_for('static', filename='flaga_pirat.jpg')}}">
+            {% endif %}
+        </body>
+    </html>
+</html>
