@@ -9,6 +9,7 @@ app = Flask(__name__)
 
 app.config['SECRET_KEY'] = 'SomethingWhatNo1CanGuess!'
 
+
 def get_db():
 
     if not hasattr(g, 'sqlite3_db'):
