@@ -1,0 +1,12 @@
+cd data
+sqlite3 cantor.db
+.tables
+
+create table users(
+	id integer primary key autoincrement,
+	name varchar(100) not null unique,
+	email varchar(100) not null unique,
+	password text,
+	is_active boolean not null default 0,
+	is_admin boolean not null default 0
+	);
